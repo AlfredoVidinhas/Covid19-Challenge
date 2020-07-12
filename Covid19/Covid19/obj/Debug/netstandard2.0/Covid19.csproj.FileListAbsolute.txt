@@ -1,0 +1,12 @@
+/Users/admin/Projects/Covid19/Covid19/Covid19/bin/Debug/netstandard2.0/Covid19.deps.json
+/Users/admin/Projects/Covid19/Covid19/Covid19/bin/Debug/netstandard2.0/Covid19.dll
+/Users/admin/Projects/Covid19/Covid19/Covid19/bin/Debug/netstandard2.0/Covid19.pdb
+/Users/admin/Projects/Covid19/Covid19/Covid19/obj/Debug/netstandard2.0/App.xaml.g.cs
+/Users/admin/Projects/Covid19/Covid19/Covid19/obj/Debug/netstandard2.0/Views/MainPage.xaml.g.cs
+/Users/admin/Projects/Covid19/Covid19/Covid19/obj/Debug/netstandard2.0/Covid19.AssemblyInfoInputs.cache
+/Users/admin/Projects/Covid19/Covid19/Covid19/obj/Debug/netstandard2.0/Covid19.AssemblyInfo.cs
+/Users/admin/Projects/Covid19/Covid19/Covid19/obj/Debug/netstandard2.0/Covid19.csproj.CoreCompileInputs.cache
+/Users/admin/Projects/Covid19/Covid19/Covid19/obj/Debug/netstandard2.0/XamlC.stamp
+/Users/admin/Projects/Covid19/Covid19/Covid19/obj/Debug/netstandard2.0/Covid19.dll
+/Users/admin/Projects/Covid19/Covid19/Covid19/obj/Debug/netstandard2.0/Covid19.pdb
+/Users/admin/Projects/Covid19/Covid19/Covid19/obj/Debug/netstandard2.0/Covid19.csprojAssemblyReference.cache

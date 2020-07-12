@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView"
+             xmlns:controls="clr-namespace:PanCardView.Controls;assembly=PanCardView"
+             xmlns:svg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             x:Class="Covid19.Views.MainPage"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" 
+             ios:Page.UseSafeArea="true"
+             BackgroundColor="#3A49ED">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ActiveIndicator" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="#5561EF" />
+            </Style>
+            <Style x:Key="InactiveIndicator" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="OutlineColor" Value="#3A49ED" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <FlexLayout Margin="15,0,0,0" Direction="Row" AlignItems="Center" JustifyContent="SpaceBetween">
+
+                <StackLayout>
+                    <Label Margin="0,0,0,-5"
+                           FontFamily="RegularFont"
+                           FontSize="19"
+                           TextColor="#D7DAFC"
+                           Text="Covid-19"/>
+                    <Label FontFamily="BoldFont"
+                           FontSize="30"
+                           TextColor="#FFF"
+                           Text="Prevenção"/>
+                    <Label Margin="0,10,0,0"
+                           FontFamily="MediumFont"
+                           FontSize="16"
+                           LineHeight="1.2"
+                           TextColor="#D7DAFC"
+                           Text="Vamos ajudar o mundo a recuperar,&#x0a;Começando por nós"/>
+                </StackLayout>
+
+                <svg:SvgCachedImage Margin="0,0,-108,0"
+                                    WidthRequest="210"
+                                    HorizontalOptions="FillAndExpand" 
+                                    VerticalOptions="FillAndExpand"
+                                    Source="resource://Covid19.Resources.virus.svg" />
+
+            </FlexLayout>
+
+            <StackLayout>
+                <cards:CoverFlowView ItemsSource="{Binding Items}"
+                                     PositionShiftValue="45"
+                                     SlideShowDuration="6500"
+                                     SelectedIndex="{Binding CurrentIndex}">
+
+                    <cards:CoverFlowView.ItemTemplate>
+                        <DataTemplate>
+                            <ContentView>
+                                <Frame VerticalOptions="Center"
+                                       HorizontalOptions="Center"
+                                       HeightRequest="394"
+                                       WidthRequest="316"
+                                       Padding="0" 
+                                       HasShadow="false"
+                                       IsClippedToBounds="true"
+                                       CornerRadius="25"
+                                       BackgroundColor="#FFF">
+
+                                    <StackLayout >
+
+                                        <forms:AnimationView Animation="{Binding Animacao}"
+                                                             Loop="True" AutoPlay="True"
+                                                             VerticalOptions="Start"
+                                                             Margin="0,5,0,0"
+                                                             HeightRequest="210"/>
+
+                                        <Label Margin="0,5,0,0"
+                                               FontFamily="BoldFont"
+                                               FontAttributes="Bold"
+                                               FontSize="18"
+                                               TextColor="#575757"
+                                               HorizontalTextAlignment="Center"
+                                               Text="{Binding Titulo}"/>
+
+                                        <Label Margin="0,5,0,0"
+                                               FontFamily="MediumFont"
+                                               FontSize="16"
+                                               LineHeight="1.2"
+                                               HorizontalTextAlignment="Center"
+                                               TextColor="#8D8585"
+                                               Text="{Binding Descricao}"/>
+                                    </StackLayout>
+
+                                </Frame>
+                            </ContentView>
+                        </DataTemplate>
+                    </cards:CoverFlowView.ItemTemplate>
+                    <controls:IndicatorsControl SelectedIndicatorStyle="{StaticResource ActiveIndicator}"
+                                                UnselectedIndicatorStyle="{StaticResource InactiveIndicator}"
+                                                Margin="0,450,0,0"/>
+                </cards:CoverFlowView>
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
